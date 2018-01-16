@@ -1,0 +1,182 @@
+@keyframes slidein {
+  from {
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/8638XE4Z4H.jpg"); }
+  33% {
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/XV8R3PQ2TZ.jpg"); }
+  67% {
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/CJLIE3TL3R.jpg"); }
+  to {
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/8638XE4Z4H.jpg"); } }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative; }
+
+body h1 {
+  text-align: right; }
+body .container {
+  width: 75%;
+  height: 100%;
+  margin: 0 auto; }
+body a {
+  text-decoration: none; }
+
+.floatingUp {
+  position: fixed;
+  top: 90vh;
+  left: 10vh;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50px;
+  border: 2px solid red;
+  background: blue;
+  z-index: 98; }
+  .floatingUp a {
+    color: yellow;
+    width: 50px;
+    height: 50px;
+    display: block; }
+
+header {
+  height: calc(100vh - 10vh);
+  max-height: calc(100vh - 50px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  position: relative;
+  animation-duration: 10s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  background-color: #777;
+  background-attachment: fixed;
+  background-size: cover; }
+  header:hover {
+    animation-play-state: paused; }
+  header .frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    border: 2px solid #000;
+    border-radius: 20px;
+    width: 50%;
+    height: 50%;
+    box-shadow: 0 0 10px 10px #000;
+    padding: 50px; }
+    header .frame:hover {
+      width: 60%;
+      height: 60%;
+      box-shadow: 0 0 10px 10px #fff; }
+      header .frame:hover .slogan {
+        background-color: white; }
+    header .frame:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      background-color: rgba(255, 255, 255, 0.2);
+      filter: blur(10px);
+      z-index: -1; }
+    header .frame .slogan {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 2px solid #000;
+      border-radius: 20px;
+      width: 75%;
+      height: 75%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      header .frame .slogan img {
+        width: 75%;
+        filter: drop-shadow(16px 16px 10px black); }
+    header .frame h1 {
+      display: none; }
+
+.menuBackground {
+  background-color: #747572;
+  z-index: 1;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  top: 0; }
+
+nav {
+  position: sticky;
+  top: 3vh;
+  height: 10vh;
+  min-height: 50px;
+  text-align: center;
+  background-color: #747572;
+  background-image: url("https://image.ibb.co/drvzSR/f746b7a6.png");
+  z-index: 100;
+  box-shadow: 0px 11px 18px -8px black; }
+  nav ul {
+    list-style-type: none;
+    display: inline-block;
+    width: 100%;
+    transform: translateY(-3vh); }
+    nav ul li {
+      display: inline-block;
+      width: 30%;
+      border-radius: 15px;
+      border: 2px solid #e37222;
+      box-shadow: 0 0 15px 0 #000;
+      margin: 0 10px;
+      background-size: 300%;
+      background-position: 100% 0;
+      transition: transform .5s, background 1s; }
+      nav ul li:hover {
+        box-shadow: inset 0 0 15px 0 #000;
+        transform: translateY(5px);
+        background-image: linear-gradient(135deg, #e37222 50%, transparent 50%);
+        background-position: 0 100%; }
+      nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: #e37222;
+        line-height: 10vh;
+        font-weight: bold;
+        font-size: 2em;
+        transition: color 1s; }
+        nav ul li a:hover {
+          color: #fff; }
+
+main section {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%; }
+  main section h1 {
+    position: sticky;
+    top: calc(10vh + 3vh + 2vh);
+    color: #5d6673;
+    text-shadow: 0 0 5px white;
+    font-size: 3em; }
+  main section .container {
+    min-height: 100vh; }
+  main section.about {
+    background-color: #a6a7a5;
+    background-image: url("https://image.ibb.co/bN9eu6/5895dac6.png");
+    background-attachment: fixed; }
+  main section.portfolio {
+    background-color: blue;
+    background-attachment: fixed; }
+  main section.contact {
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/NO4E69VPDP.jpg");
+    background-attachment: fixed;
+    background-size: cover; }
+
+footer {
+  background-color: black;
+  padding: 20px;
+  color: #575757; }
+
+/*# sourceMappingURL=style.css.map */
