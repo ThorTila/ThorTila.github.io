@@ -7,6 +7,9 @@
     background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/CJLIE3TL3R.jpg"); }
   to {
     background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/8638XE4Z4H.jpg"); } }
+@keyframes focus {
+  to {
+    transform: scale(2) translate(0, -10px); } }
 * {
   margin: 0;
   padding: 0;
@@ -34,11 +37,12 @@ body a {
   border: 2px solid red;
   background: blue;
   z-index: 98; }
+  .floatingUp:hover i {
+    animation: focus 1s infinite alternate; }
   .floatingUp a {
     color: yellow;
-    width: 50px;
-    height: 50px;
-    display: block; }
+    display: block;
+    font-size: 2em; }
 
 header {
   height: calc(100vh - 10vh);

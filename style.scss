@@ -19,6 +19,11 @@ $darkText: #000;
 		background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/8638XE4Z4H.jpg");
 	}
 }
+@keyframes focus {
+    to {
+        transform: scale(2) translate(0, -10px);
+    }
+}
 		
 * {
 	margin: 0;
@@ -52,11 +57,15 @@ body {
     border: 2px solid red;
     background: blue;
     z-index: 98;
+    &:hover {
+        i {
+            animation: focus 1s infinite alternate;
+        }
+    }
     a {
     	color: yellow;
-    	width: 50px;
-    	height: 50px;
 		display: block;
+        font-size: 2em;
     }
 }
 header {
