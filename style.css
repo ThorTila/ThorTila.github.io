@@ -7,8 +7,6 @@
   box-sizing: border-box;
   position: relative; }
 
-body h1 {
-  text-align: right; }
 body .container {
   width: 75%;
   height: 100%;
@@ -36,47 +34,32 @@ body a {
     font-size: 2em; }
 
 header {
-  height: calc(100vh - 10vh);
-  max-height: calc(100vh - 50px);
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: calc(100vh - 10vh);
+  max-height: calc(100vh - 50px);
   z-index: 99;
-  position: relative;
-  background-image: url(media/billy-huynh-278252.jpg);
-  background-color: black;
-  background-attachment: fixed;
-  background-size: cover; }
+  background: url("media/billy-huynh-278252.jpg") center/cover fixed black; }
   header .frame {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70vw;
-    height: calc(70vw * (9 / 16));
-    padding: 2%; }
-    header .frame .poster {
-      width: 100%;
-      height: 100%;
+    width: 124.4444444444vh;
+    height: 70vh;
+    border: 3px solid whitesmoke;
+    padding: 5%; }
+    header .frame .slogan {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      border: 3px solid whitesmoke;
-      padding: 5%; }
-      header .frame .poster .slogan {
-        width: 100%;
-        height: 50%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column; }
-        header .frame .poster .slogan h1 {
-          font-size: 10em;
-          color: white; }
-        header .frame .poster .slogan h2 {
-          font-size: 4em;
-          color: white; }
+      align-items: center; }
+      header .frame .slogan h1 {
+        font-size: 10em;
+        color: #fff; }
+      header .frame .slogan h2 {
+        font-size: 4em;
+        color: #fff;
+        text-align: center; }
 
 .menuBackground {
   background-color: #747572;
@@ -136,7 +119,8 @@ main section {
     top: calc(10vh + 3vh + 2vh);
     color: #5d6673;
     text-shadow: 0 0 5px white;
-    font-size: 3em; }
+    font-size: 3em;
+    text-align: right; }
   main section .container {
     min-height: 100vh; }
   main section.about {

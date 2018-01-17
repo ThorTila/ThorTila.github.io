@@ -1,10 +1,16 @@
+$verticalFrameHeight: 70vh;
+$menuHeight: 10vh;
+$btnOffset: 3vh;
 $menuBackground: #747572;
 $greyBackground: #777;
-$menuHeight: 10vh;
 $btnBackground: #e37222;
-$btnOffset: 3vh;
 $lightText: #fff;
 $darkText: #000;
+@mixin flex-center {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
 @keyframes focus {
     to {
         transform: scale(2) translate(0, -10px);
@@ -17,9 +23,6 @@ $darkText: #000;
 	position: relative;
 }
 body {
-	h1 {
-		text-align: right;
-	}
 	.container {
 		width: 75%;
 		height: 100%;
@@ -54,50 +57,28 @@ body {
     }
 }
 header {
+    @include flex-center;
 	height: calc(100vh - #{$menuHeight});
 	max-height: calc(100vh - 50px);
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	z-index: 99;
-	position: relative;
-    background-image: url(media/billy-huynh-278252.jpg);
-  	background-color: black;
-  	background-attachment: fixed;
-	background-size: cover;
+    background: url("media/billy-huynh-278252.jpg") center/cover fixed black;
 	.frame {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 70vw;
-        height: calc(70vw * (9 / 16));
-        padding: 2%;
-		.poster {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 3px solid whitesmoke;
-            padding: 5%;
+        @include flex-center;
+		width: $verticalFrameHeight * (16 / 9);
+        height: $verticalFrameHeight;
+        border: 3px solid whitesmoke;
+        padding: 5%;
             .slogan {
-                width: 100%;
-                height: 50%;
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                flex-direction: column;
+                @include flex-center;
                 h1 {
                     font-size: 10em;
-                    color: white;
+                    color: $lightText;
                 }
                 h2 {
                     font-size: 4em;
-                    color: white;
+                    color: $lightText;
+                    text-align: center;
                 }
-            }
 		}
 	}
 }
@@ -166,6 +147,7 @@ main {
 			color: #5d6673;
 			text-shadow: 0 0 5px rgba(255,255,255,1);
 			font-size: 3em;
+            text-align: right;
 		}
 		.container {
 			min-height: 100vh;
