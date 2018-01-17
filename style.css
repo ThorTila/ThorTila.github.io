@@ -1,6 +1,18 @@
 @keyframes focus {
   to {
     transform: scale(2) translate(0, -10px); } }
+@font-face {
+  font-family: 'Ostrich Sans';
+  src: url(media/resources/OstrichSans-Bold.otf); }
+@font-face {
+  font-family: 'Motorless';
+  src: url(media/resources/Motorless-Default.ttf); }
+@font-face {
+  font-family: 'Motorless Drilled';
+  src: url(media/resources/Motorless-Drilled.ttf); }
+@font-face {
+  font-family: 'Motorless Hammered';
+  src: url(media/resources/Motorless-Hammered.ttf); }
 * {
   margin: 0;
   padding: 0;
@@ -40,14 +52,14 @@ header {
   height: calc(100vh - 10vh);
   max-height: calc(100vh - 50px);
   z-index: 99;
-  background: url("media/billy-huynh-278252.jpg") center/cover fixed black; }
+  background: url("media/images/billy-huynh-278252.jpg") center/cover fixed black; }
   header .frame {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 124.4444444444vh;
     height: 70vh;
-    border: 3px solid whitesmoke;
+    border: 5px dashed whitesmoke;
     padding: 5%; }
     header .frame .slogan {
       display: flex;
@@ -55,14 +67,17 @@ header {
       align-items: center; }
       header .frame .slogan h1 {
         font-size: 10em;
-        color: #fff; }
+        color: #fff;
+        font-family: 'Motorless Drilled';
+        font-weight: normal; }
       header .frame .slogan h2 {
         font-size: 4em;
         color: #fff;
-        text-align: center; }
+        text-align: center;
+        font-family: 'Motorless'; }
 
 .menuBackground {
-  background-color: #747572;
+  background: url("media/images/f746b7a6.png");
   z-index: 1;
   width: 100%;
   height: 10vh;
@@ -75,8 +90,7 @@ nav {
   height: 10vh;
   min-height: 50px;
   text-align: center;
-  background-color: #747572;
-  background-image: url("media/f746b7a6.png");
+  background: url("media/images/f746b7a6.png");
   z-index: 100;
   box-shadow: 0px 11px 18px -8px black; }
   nav ul {
@@ -125,7 +139,7 @@ main section {
     min-height: 100vh; }
   main section.about {
     background-color: #a6a7a5;
-    background-image: url("media/5895dac6.png");
+    background-image: url("media/images/5895dac6.png");
     background-attachment: fixed; }
   main section.portfolio {
     background-color: blue;
