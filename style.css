@@ -1,12 +1,3 @@
-@keyframes slidein {
-  from {
-    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/8638XE4Z4H.jpg"); }
-  33% {
-    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/XV8R3PQ2TZ.jpg"); }
-  67% {
-    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/CJLIE3TL3R.jpg"); }
-  to {
-    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/8638XE4Z4H.jpg"); } }
 @keyframes focus {
   to {
     transform: scale(2) translate(0, -10px); } }
@@ -53,57 +44,39 @@ header {
   align-items: center;
   z-index: 99;
   position: relative;
-  animation-duration: 10s;
-  animation-name: slidein;
-  animation-iteration-count: infinite;
-  background-color: #777;
+  background-image: url(media/billy-huynh-278252.jpg);
+  background-color: black;
   background-attachment: fixed;
   background-size: cover; }
-  header:hover {
-    animation-play-state: paused; }
   header .frame {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
-    top: 0;
-    border: 2px solid #000;
-    border-radius: 20px;
-    width: 50%;
-    height: 50%;
-    box-shadow: 0 0 10px 10px #000;
-    padding: 50px; }
-    header .frame:hover {
-      width: 60%;
-      height: 60%;
-      box-shadow: 0 0 10px 10px #fff; }
-      header .frame:hover .slogan {
-        background-color: white; }
-    header .frame:before {
-      content: "";
-      position: absolute;
+    width: 70vw;
+    height: calc(70vw * (9 / 16));
+    padding: 2%; }
+    header .frame .poster {
       width: 100%;
       height: 100%;
-      top: 0%;
-      left: 0%;
-      background-color: rgba(255, 255, 255, 0.2);
-      filter: blur(10px);
-      z-index: -1; }
-    header .frame .slogan {
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 2px solid #000;
-      border-radius: 20px;
-      width: 75%;
-      height: 75%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; }
-      header .frame .slogan img {
-        width: 75%;
-        filter: drop-shadow(16px 16px 10px black); }
-    header .frame h1 {
-      display: none; }
+      align-items: center;
+      border: 3px solid whitesmoke;
+      padding: 5%; }
+      header .frame .poster .slogan {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column; }
+        header .frame .poster .slogan h1 {
+          font-size: 10em;
+          color: white; }
+        header .frame .poster .slogan h2 {
+          font-size: 4em;
+          color: white; }
 
 .menuBackground {
   background-color: #747572;
