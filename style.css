@@ -49,14 +49,17 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 10vh);
-  max-height: calc(100vh - 50px);
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh);
+  max-height: calc(100vh);
   z-index: 99;
   background: url("media/images/billy-huynh-278252.jpg") center/cover fixed black; }
   header .frame {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
     width: 124.4444444444vh;
     height: 70vh;
     border: 5px dashed whitesmoke;
@@ -75,6 +78,8 @@ header {
         color: #fff;
         text-align: center;
         font-family: 'Motorless'; }
+  header i {
+    animation: focus 1s infinite alternate; }
 
 .menuBackground {
   background: url("media/images/f746b7a6.png");
@@ -135,8 +140,13 @@ main section {
     text-shadow: 0 0 5px white;
     font-size: 3em;
     text-align: right; }
+  main section i {
+    animation: focus 1s infinite alternate;
+    position: absolute;
+    bottom: -92vh; }
   main section .container {
-    min-height: 100vh; }
+    min-height: 100vh;
+    text-align: center; }
   main section.about {
     background-color: #a6a7a5;
     background-image: url("media/images/5895dac6.png");

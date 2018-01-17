@@ -74,32 +74,38 @@ body {
 }
 header {
     @include flex-center;
-	height: calc(100vh - #{$menuHeight});
-	max-height: calc(100vh - 50px);
+    flex-direction: column;
+    justify-content: space-between;
+	height: calc(100vh);
+	max-height: calc(100vh);
 	z-index: 99;
     background: url("media/images/billy-huynh-278252.jpg") center/cover fixed black;
 	.frame {
         @include flex-center;
+        align-self: center;
 		width: $verticalFrameHeight * (16 / 9);
         height: $verticalFrameHeight;
         border: 5px dashed whitesmoke;
         padding: 5%;
-            .slogan {
-                @include flex-center;
-                h1 {
-                    font-size: 10em;
-                    color: $lightText;
-                    font-family: 'Motorless Drilled';
-                    font-weight: normal;
-                }
-                h2 {
-                    font-size: 4em;
-                    color: $lightText;
-                    text-align: center;
-                    font-family: 'Motorless';
-                }
-		}
-	}
+        .slogan {
+             @include flex-center;
+            h1 {
+                font-size: 10em;
+                 color: $lightText;
+                font-family: 'Motorless Drilled';
+                font-weight: normal;
+             }
+            h2 {
+                font-size: 4em;
+                color: $lightText;
+                text-align: center;
+                font-family: 'Motorless';
+            }
+        }
+    }
+    i {
+        animation: focus 1s infinite alternate;
+    }
 }
 .menuBackground {
 	background: $menuBackground;
@@ -167,8 +173,14 @@ main {
 			font-size: 3em;
             text-align: right;
 		}
+        i {
+            animation: focus 1s infinite alternate;
+            position: absolute;
+            bottom: -92vh;
+        }
 		.container {
 			min-height: 100vh;
+            text-align: center;
 		}
 		&.about {
 			background-color: #a6a7a5;
