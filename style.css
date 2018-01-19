@@ -1,6 +1,9 @@
 @keyframes focus {
   to {
     transform: scale(2) translate(0, -10px); } }
+@keyframes up {
+  to {
+    transform: scale(2) translate(-25%, -100%); } }
 @font-face {
   font-family: 'Ostrich Sans';
   src: url(media/resources/OstrichSans-Bold.otf); }
@@ -28,22 +31,29 @@ body a {
 
 .floatingUp {
   position: fixed;
-  top: 90vh;
-  left: 10vh;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  bottom: 5vh;
+  right: 10vh;
+  min-width: 50px;
   text-align: center;
   border-radius: 50px;
-  border: 2px solid red;
-  background: blue;
+  border: 2px dashed white;
+  background: transparent;
+  box-shadow: 0 0 5px 2px;
+  text-shadow: 0 2px 3px #000, 0 -2px 3px #777;
   z-index: 98; }
   .floatingUp:hover i {
-    animation: focus 1s infinite alternate; }
+    animation: up 1s infinite alternate; }
   .floatingUp a {
-    color: yellow;
+    color: white;
     display: block;
-    font-size: 2em; }
+    font-size: 2em;
+    width: 100%;
+    padding-top: 100%; }
+    .floatingUp a i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
 
 header {
   display: flex;
@@ -51,19 +61,44 @@ header {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh);
-  max-height: calc(100vh);
+  height: 100vh;
   z-index: 99;
   background: url("media/images/billy-huynh-278252.jpg") center/cover fixed black; }
   header .frame {
     display: flex;
     justify-content: center;
     align-items: center;
-    align-self: center;
     width: 124.4444444444vh;
     height: 70vh;
     border: 5px dashed whitesmoke;
+    border-top: 0;
     padding: 5%; }
+    header .frame .frame-text {
+      position: absolute;
+      top: -25px;
+      color: white;
+      width: 100%;
+      text-align: center;
+      font-size: 2em; }
+      header .frame .frame-text::before {
+        content: "";
+        width: 40%;
+        height: 0;
+        border-top: 5px dashed whitesmoke;
+        float: left;
+        position: relative;
+        top: 25px; }
+      header .frame .frame-text::after {
+        content: "";
+        width: 40%;
+        height: 0;
+        border-top: 5px dashed whitesmoke;
+        float: right;
+        position: relative;
+        top: 25px; }
+      header .frame .frame-text p {
+        display: inline-block;
+        width: 20%; }
     header .frame .slogan {
       display: flex;
       justify-content: center;
@@ -81,59 +116,6 @@ header {
   header i {
     animation: focus 1s infinite alternate; }
 
-.menuBackground {
-  background: url("media/images/f746b7a6.png");
-  z-index: 1;
-  width: 100%;
-  height: 10vh;
-  position: fixed;
-  top: 0; }
-
-/*nav {
-	position: sticky;
-	top: $btnOffset;
-	height: $menuHeight;
-	min-height: 50px;
-	text-align: center;
-	background: $menuBackground;
-	z-index: 100;
-	box-shadow: 0px 11px 18px -8px rgba(0,0,0,1);
-	ul {
-		list-style-type: none;
-		display: inline-block;
-		width: 100%;
-		transform: translateY(-$btnOffset);
-		li {
-			display: inline-block;
-			width: 30%;
-			border-radius: 15px;
-			border: 2px solid $btnBackground;
-			box-shadow: 0 0 15px 0 #000;
-			margin: 0 10px;
-			background-size: 300%;
-			background-position: 100% 0;
-			transition: transform .5s, background 1s;;
-			&:hover {
-				box-shadow: inset 0 0 15px 0 #000;
-				transform: translateY(5px);
-				background-image: linear-gradient(135deg, $btnBackground 50%, transparent 50%);
-				background-position: 0 100%;
-			}
-			a {
-				display: block;
-				text-decoration: none;
-				color: $btnBackground;
-				line-height: $menuHeight;
-				font-weight: bold;
-				font-size: 2em;
-				transition: color 1s;
-				&:hover {
-				color: $lightText;
-				}
-			}
-		}
-	}
-}*/
 main nav {
   position: sticky;
   top: 0;
@@ -142,16 +124,35 @@ main nav {
   height: 100vh;
   width: 20vw;
   text-align: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+  padding: 5vh; }
   main nav a {
-    color: white; }
+    color: white;
+    font-size: 1.5em; }
+    main nav a::after {
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      top: 2.5em;
+      left: 0;
+      right: 0;
+      border-right: 2px dashed;
+      margin: 0 auto;
+      transition: all 2s; }
+    main nav a:last-child::after {
+      content: none; }
+    main nav a.active, main nav a:hover {
+      color: black; }
+    main nav a.active::after {
+      height: 20vh; }
 main section {
   min-height: 100vh;
   height: 100%;
   width: 100%; }
   main section h1 {
     position: sticky;
-    top: calc(10vh + 3vh + 2vh);
+    top: 2vh;
     color: #5d6673;
     text-shadow: 0 0 5px white;
     font-size: 3em;
@@ -168,7 +169,7 @@ main section {
     background-image: url("media/images/5895dac6.png");
     background-attachment: fixed; }
   main section.portfolio {
-    background-color: blue;
+    background-color: lightgray;
     background-attachment: fixed; }
   main section.contact {
     background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/NO4E69VPDP.jpg");

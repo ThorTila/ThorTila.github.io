@@ -25,7 +25,6 @@
     "nu-html-checker": "^0.1.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "require": "^2.4.20"
+    "bootstrap": "^4.0.0"
   }
 }
