@@ -115,7 +115,7 @@ header {
 	position: fixed;
 	top: 0;
 }
-nav {
+/*nav {
 	position: sticky;
 	top: $btnOffset;
 	height: $menuHeight;
@@ -159,8 +159,21 @@ nav {
 			}
 		}
 	}
-}
+}*/
 main {
+    nav {
+        position: sticky;
+        top: 0;
+        float: left;
+        z-index: 97;
+        height: 100vh;
+        width: 20vw;
+        text-align: center;
+        justify-content: space-around;
+        a {
+            color: white;
+        }
+    }
 	section {
 		min-height: 100vh;
 		height: 100%;

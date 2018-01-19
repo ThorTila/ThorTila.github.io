@@ -1,0 +1,31 @@
+{
+  "name": "ThorTila.github.io",
+  "version": "1.0.0",
+  "description": "Moja internetowa wizytówka w trakcie budowy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:html",
+    "test:html": "globstar nu-html-checker *.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThorTila/ThorTila.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThorTila/ThorTila.github.io/issues"
+  },
+  "homepage": "https://github.com/ThorTila/ThorTila.github.io#readme",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.23.5",
+    "globstar": "^1.0.0",
+    "nu-html-checker": "^0.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "require": "^2.4.20"
+  }
+}
