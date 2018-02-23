@@ -1,0 +1,262 @@
+@import 'animations';
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'global';
+.floatingUp {
+	position: fixed;
+	bottom: 5vh;
+	right: 10vh;
+	min-width: 50px;
+    text-align: center;
+    border-radius: 50px;
+    border: 2px dashed $mainTextColor;
+    background: transparent;
+   // box-shadow: 0 0 5px 2px;
+   // text-shadow: 0 2px 3px #000, 0 -2px 3px #777;
+    z-index: 98;
+    &:hover {
+        i {
+            animation: up 1s infinite alternate;
+        }
+    }
+    a {
+    	color: $mainTextColor;
+		display: block;
+        font-size: 2em;
+        width: 100%;
+        padding-top: 100%;
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+header {
+    @include flex-center;
+    flex-direction: column;
+    justify-content: space-between;
+	height: 100vh;
+	z-index: 99;
+    background: url("../media/images/billy-huynh-278252.jpg") center/cover fixed black;
+    box-shadow: inset 0 -10px 5px -5px #000;
+	.frame {
+        @include flex-center;
+		width: $verticalFrameHeight * (16 / 9);
+        height: $verticalFrameHeight;
+        border: 5px dashed $mainTextColor;
+        border-top: 0;
+        padding: 5%;
+        .frame-text {
+            position: absolute;
+            top: -25px;
+            color: white;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            &::before {
+                content: "";
+                width: 40%;
+                height: 0;
+                border-top: 5px dashed $mainTextColor;
+                float: left; 
+                position: relative;
+                top: 25px;
+            }
+            &::after {
+                content: "";
+                width: 40%;
+                height: 0;
+                border-top: 5px dashed $mainTextColor;
+                float: right; 
+                position: relative;
+                top: 25px;
+            }
+            p {
+                display: inline-block;
+                width: 20%;
+                text-align: center;
+            }
+        }
+        .slogan {
+             @include flex-center;
+            h1 {
+                font-size: 10em;
+                 color: $mainTextColor;
+                font-family: 'Motorless Drilled';
+                font-weight: normal;
+             }
+            h2 {
+                font-size: 4em;
+                color: $mainTextColor;
+                text-align: center;
+                font-family: 'Motorless';
+            }
+        }
+    }
+    i {
+        animation: focus 1s infinite alternate;
+        color: $mainTextColor;
+    }
+}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    nav {
+        position: sticky;
+        top: 0;
+        float: left;
+        z-index: 97;
+        height: 100vh;
+        width: 20vw;
+        max-width: 240px;
+        text-align: center;
+        justify-content: space-around;
+        margin-right: 2rem;
+        background: rgba(255,255,255,.2);
+        a {
+            color: $mainTextColor;
+            font-size: 1.5em;
+            font-weight: 400;
+            text-shadow: 0 0 5px invert($mainTextColor);
+            &::after {
+                content: "";
+                height: 0;
+                width: 0;
+                position: absolute;
+                top: 2.5em;
+                left: 0;
+                right: 0;
+                border-right: 2px dashed;
+                margin: 0 auto;
+                transition: all 2s;
+            }
+            &:last-child {
+                &::after {
+                    content: none;
+                }
+            }
+            &.active, &:hover {
+                font-weight: 900;
+            }
+            &.active::after {
+                height: 20vh;
+            }
+        }
+    }
+	section {
+		min-height: 100vh;
+		height: 100%;
+		width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        &:nth-of-type(2n) {
+            box-shadow: inset 0 10px 5px -5px #000, inset 0 -10px 5px -5px #000;
+        }
+		h2 {
+			//color: #5d6673;
+            color: $mainTextColor;
+			//text-shadow: 0 0 5px rgba(255,255,255,1);
+			font-size: 3em;
+            text-align: right;
+            font-weight: bold;
+		}
+        i {
+            animation: focus 1s infinite alternate;
+            position: absolute;
+            bottom: -92vh;
+        }
+		.flex-container {
+            @include flex($direction: column, $justify: space-between);
+			min-height: 100vh;
+            text-align: center;
+            width: 80vw;
+            max-width: 960px;
+            margin-right: calc((100vw - 1200px) / 2);
+            padding: 7.5rem 2rem;
+            @include padding($top: 7.5rem, $bottom: 7.5rem, $right: 2rem);
+            & > *:not(:last-child) {
+                margin-bottom: 3.75rem;
+            }
+		}
+		&.about {
+			//background-color: #a6a7a5;
+			//background-image: url("../media/images/5895dac6.png");
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==), $aboutBackground;
+            //background: $aboutBackground;
+			background-attachment: fixed;
+            h2 {
+                color: darken($aboutBackground, 10%);
+                text-shadow: 0 1px 1px lighten($aboutBackground, 10%);
+            }
+		}
+		&.portfolio {
+			background-color: $portfolioBackground;
+			background-attachment: fixed;
+            h2 {
+                color: darken($portfolioBackground, 10%);
+                text-shadow: 0 1px 1px lighten($portfolioBackground, 10%);
+            }
+		}
+		&.contact {
+			background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/NO4E69VPDP.jpg");
+			background-attachment: fixed;
+			background-size: cover;
+		}
+	}
+    .about {
+        h3 {
+            width: 100%;
+           // border-bottom: 2px groove transparentize($mainTextColor, .4); // to do
+            text-align: left;
+            font-weight: 600;
+            &:last-child {
+                text-align: right;
+            }
+        }
+        /*.line {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, $mainTextColor, darken($aboutBackground, 10%) 80%);
+            box-shadow: 0 1px 1px lighten($aboutBackground, 10%);
+        }*/
+        p, .content {
+            @include padding($top: 1rem, $bottom: 1rem, $right: 1rem);
+            border-image: linear-gradient(to left top, white, transparent 30%) 1;
+            border-width: 3px;
+            border-style: solid;
+        }
+        .content {
+            display: grid;
+            grid-auto-flow: column;
+            border-image: linear-gradient(to right bottom, white, transparent 30%) 1;
+        }
+        /*.frame {
+            border: 2px solid;
+            border-radius: 5px;
+            background: white;
+            .caption {
+                background: grey;
+                h3 {
+                    text-align: center;
+                    color: $mainTextColor;
+                }
+            }
+            .content {
+                display: flex;
+                img {
+                    min-width: 0;
+                    min-height: 0;
+                    flex: 1;
+                }
+            }
+        }*/
+    }
+}
+footer {
+	background-color: black;
+	padding: 20px;
+	color: $mainTextColor;
+}

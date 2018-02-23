@@ -1,0 +1,10 @@
+@keyframes focus {
+    to {
+        transform: scale(2) translate(0, -10px);
+    }
+}	
+@keyframes up {
+    to {
+        transform: scale(2) translate(-25%, -100%);
+    }
+}

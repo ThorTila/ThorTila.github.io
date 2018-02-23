@@ -4,8 +4,22 @@
   "description": "Moja internetowa wizytówka w trakcie budowy.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:html",
-    "test:html": "globstar nu-html-checker *.html"
+    "test": "npm-run-all test:*",
+    "test:html": "globstar nu-html-checker *.html",
+    "test:js": "globstar jshint js/*.js",
+    "init-project": "npm init && npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build": "npm-run-all build:* test",
+    "build:clean": "rimraf css/*.css",
+    "build:sass": "node-sass --output-style compact -o css sass/style.scss",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "watch": "npm-run-all build -p watch:*",
+    "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all sassprefixer:*",
+    "sassprefixer:sass": "node-sass --output-style expanded --source-map true -o css sass/style.scss",
+    "sassprefixer:autoprefixer": "autoprefixer-cli css/style.css",
+    "watch:browsersync": "browser-sync start --server --files 'css/*.css' '*.html' --browser \"C:/Program Files/Firefox Developer Edition/firefox.exe\""
   },
   "repository": {
     "type": "git",
@@ -22,9 +36,13 @@
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.23.5",
     "globstar": "^1.0.0",
-    "nu-html-checker": "^0.1.0"
+    "jshint": "^2.9.5",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^3.3.0",
+    "rimraf": "^2.6.2"
   },
-  "dependencies": {
-    "bootstrap": "^4.0.0"
-  }
+  "dependencies": {}
 }
