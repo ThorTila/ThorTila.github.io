@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router';
+import './header.css';
 
-const Navigation = props => (
+const Header = props => (
   <header>
-    <div className="logo">Łukasz Rasiński</div>
+    <Link to="/">
+      <div className="logo" />
+      <h2>Łukasz Rasiński</h2>
+    </Link>
     <nav>
       <ul>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/">About</Link>
         </li>
         <li>
           <Link to="/portfolio">Portfolio</Link>
@@ -17,8 +21,7 @@ const Navigation = props => (
         </li>
       </ul>
     </nav>
-    <div className="container-fluid">{props.children}</div>
   </header>
 );
 
-export default Navigation;
+export default Header;

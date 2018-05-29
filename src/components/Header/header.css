@@ -1,0 +1,30 @@
+header {
+  background: #473f93;
+  padding: 2%;
+  text-align: center;
+  width: 15%;
+  min-height: 100vh;
+  float: left;
+}
+.logo {
+  padding: 30% 20%;
+  background: url(https://scontent-waw1-1.xx.fbcdn.net/v/t31.0-8/904373_565675356805714_472165631_o.jpg?_nc_cat=0&oh=acd6427c685f814ffa96839adf1e2cef&oe=5BC03D07)
+    center / cover;
+  border-radius: 30px 10px;
+  border: 5px solid white;
+}
+h2 {
+  margin-top: 10%;
+  color: white;
+}
+li {
+  list-style-type: none;
+  background: white;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 5%;
+}
+a {
+  text-decoration: none;
+  width: 100%;
+}

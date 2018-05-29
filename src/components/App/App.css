@@ -1,0 +1,18 @@
+main {
+  min-height: 100vh;
+  position: relative;
+}
+main:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.container {
+  border: 5px solid #473f93;
+  border-left: none;
+  background: white;
+  padding: 5%;
+  float: right;
+  width: 85%;
+  min-height: 100vh;
+}
