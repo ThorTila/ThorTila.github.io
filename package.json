@@ -1,0 +1,29 @@
+{
+  "name": "ThorTila.github.io",
+  "version": "0.1.0",
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router": "^4.2.0",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "npm-run-all -p start:* watch",
+    "start:react": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "watch": "npm-run-all build -p watch:*",
+    "watch:sassprefixer":
+      "onchange public/sass/*.scss -- npm-run-all sassprefixer:*",
+    "sassprefixer:sass":
+      "node-sass --output-style expanded --source-map true -o public/css public/sass/style.scss",
+    "sassprefixer:autoprefixer": "autoprefixer-cli public/css/style.css"
+  },
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "node-sass": "^4.9.0",
+    "npm-run-all": "^4.1.3",
+    "onchange": "^4.0.0"
+  }
+}
