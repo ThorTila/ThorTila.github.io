@@ -40,8 +40,19 @@
       </div>
     </div>
     <div class="loader">
-      <i class="fa fa-circle-o-notch fa-4x fa-inverse fa-spin" aria-hidden="true"></i>
-      <i class="fa fa-angle-double-down fa-4x fa-inverse" aria-hidden="true"></i>
+      <div class="spinner">
+        <p>Loading...</p>
+        <div class="ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="arrow">
+        <i class="fa fa-angle-double-down fa-4x fa-inverse" aria-hidden="true"></i>
+        <p>Press enter or click!!!</p>
+      </div>
     </div>
 
   </div>
@@ -65,7 +76,8 @@
     var loader = document.getElementById('loading-page'), 
       changeClass = function() {
         loader.className += ' clicked';
-        loader.removeEventListener('click', changeClass)
+        loader.removeEventListener('click', changeClass);
+        window.removeEventListener('keyup', changeClass);
       },
       remove = function(e) {
         if (e.animationName === 'slideout')
@@ -74,6 +86,7 @@
       };
     loader.className = 'loaded';
     loader.addEventListener( 'click', changeClass);
+    window.addEventListener( 'keyup', changeClass);
     loader.addEventListener('animationend', remove);
   }</script>
 </body>

@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npm-run-all -p start:* watch",
     "start:react": "react-scripts start",
-    "watch": "npm run build:sass && npm-run-all watch:*",
+    "watch": "npm run build:sass && npm-run-all -p watch:*",
     "watch:src":
       "node-sass-chokidar src/ -o src/ -m w --watch --recursive --error-bell",
     "watch:pub":
