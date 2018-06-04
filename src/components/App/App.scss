@@ -1,0 +1,19 @@
+@import '../../_sass/_variables';
+
+main {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  background: $primaryBackground $backgroundGrain;
+}
+.container {
+  border: 10px solid transparent;
+  border-left: none;
+  background: $secondaryBackground;
+  background-clip: padding-box;
+  padding: 5%;
+  width: 85%;
+  h1 {
+    color: $secondaryTextColor;
+  }
+}

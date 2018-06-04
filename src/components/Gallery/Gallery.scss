@@ -1,0 +1,8 @@
+.gallery {
+  display: grid;
+  grid: none/1fr 1fr 1fr 1fr;
+  grid-gap: 60px 20px;
+}
+.gallery-el > a {
+  display: block;
+}

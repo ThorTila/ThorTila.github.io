@@ -8,20 +8,39 @@ const Header = props => (
       <div className="logo" />
       <h2>Łukasz Rasiński</h2>
     </Link>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">About</Link>
-        </li>
-        <li>
-          <Link to="/portfolio">Portfolio</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-    </nav>
+    <Nav />
+    <Social />
+    <div>
+      <p className="footer">Copyright Łukasz Rasiński</p>
+    </div>
   </header>
+);
+
+const Nav = () => (
+  <nav>
+    <ul>
+      <li>
+        <Link to="/">About</Link>
+      </li>
+      <li>
+        <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link to="/contact">Contact</Link>
+      </li>
+    </ul>
+  </nav>
+);
+
+const Social = () => (
+  <div className="social">
+    <a href="https://github.com/ThorTila">
+      <i class="fa fa-github-square" aria-hidden="true" />
+    </a>
+    <a href="https://www.linkedin.com/in/%C5%82ukasz-rasi%C5%84ski/">
+      <i class="fa fa-linkedin-square" aria-hidden="true" />
+    </a>
+  </div>
 );
 
 export default Header;
