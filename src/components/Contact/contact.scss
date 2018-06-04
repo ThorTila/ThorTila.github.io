@@ -1,0 +1,9 @@
+.contact-container {
+  display: flex;
+  address {
+    flex-basis: 50%;
+  }
+  form {
+    flex-basis: 50%;
+  }
+}

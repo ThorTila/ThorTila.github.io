@@ -20,13 +20,19 @@ const Nav = () => (
   <nav>
     <ul>
       <li>
-        <Link to="/">About</Link>
+        <Link activeClassName="active" to="/">
+          About
+        </Link>
       </li>
       <li>
-        <Link to="/portfolio">Portfolio</Link>
+        <Link activeClassName="active" to="/portfolio">
+          Portfolio
+        </Link>
       </li>
       <li>
-        <Link to="/contact">Contact</Link>
+        <Link activeClassName="active" to="/contact">
+          Contact
+        </Link>
       </li>
     </ul>
   </nav>

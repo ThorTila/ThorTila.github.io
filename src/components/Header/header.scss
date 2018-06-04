@@ -24,13 +24,14 @@ header {
     border: 5px solid $secondaryBackground;
     transform: rotateZ(30deg) scale(0.8);
     transform-origin: bottom left;
-    transition: all 1s;
+    transition: all 0.5s;
     margin: 2%;
   }
-  & > a:hover {
+  &:hover {
     .logo {
       transform: none;
       border-radius: 30px 10px;
+      transition: all 1s;
     }
   }
   h2 {
@@ -46,11 +47,11 @@ header {
       margin-top: 15%;
       li {
         list-style-type: none;
-        background: transparent;
+        background: rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         padding: 2%;
-        margin: 10% 5%;
-        box-shadow: 10px 10px 8px 1px rgba(0, 0, 0, 0.8);
+        margin: 10% 5%; /* 
+        box-shadow: 10px 10px 8px 1px rgba(0, 0, 0, 0.8); */
         transition: all 0.5s;
         a {
           text-decoration: none;
