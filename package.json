@@ -8,20 +8,16 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "npm-run-all -p start:* watch",
+    "start": "npm-run-all -p start:*",
     "start:react": "react-scripts start",
     "watch": "npm run build:sass && npm-run-all -p watch:*",
-    "watch:src":
-      "node-sass-chokidar src/ -o src/ -m w --watch --recursive --error-bell",
-    "watch:pub":
-      "node-sass-chokidar public/sass/style.scss -o public/css --watch --recursive --error-bell",
+    "watch:src": "node-sass-chokidar src/ -o src/ -m w --watch --recursive --error-bell",
+    "watch:pub": "node-sass-chokidar public/sass/style.scss -o public/css --watch --recursive --error-bell",
     "build": "npm-run-all build:*",
     "build:react": "react-scripts build",
     "build:sass": "npm-run-all sass:*",
-    "sass:src":
-      "node-sass-chokidar src/ -o src/ -m w --output-style compressed",
-    "sass:pub":
-      "node-sass-chokidar public/sass/style.scss -o public/css --output-style compressed",
+    "sass:src": "node-sass-chokidar src/ -o src/ -m w --output-style compressed",
+    "sass:pub": "node-sass-chokidar public/sass/style.scss -o public/css --output-style compressed",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

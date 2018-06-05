@@ -4,8 +4,9 @@ import './about.css';
 const About = props => (
   <div className="about">
     <h1>About</h1>
-    <div className="text">
+    <div className="wrapper">
       <img
+        rel="preload"
         src="https://lh3.googleusercontent.com/EOOSYMdeRIZL5zG5bqjngNxVM0M-pWFi7QK2xtgZS2kbsXSRBXY-CfHRm2Eo0e6yK2jY-0j2fVd558tjWULWiPWCL4OgtL_CcqF7YTuPpm_oenMpeaU_1kL5S5npwp9cZTYggyIfSeEHLg5atnuIWMarzE1Y75hAnD2-U5Bxhd-PV_94PdJht-SNRFTuCM_p6NGZ2WyxGnlwc9BX-WM2lDNpfhFKyLh9borlUm60d-YWpQ17HQX1SiGISYqitN-OnsyfMC4YJlPo-GlG2bjpj6Kb4Wk4oyRH8nufgAzHUaeAezarrCI_odZpDz2FoKIO2IQaVRHrJBuHdP8QN9P3ZgqljSe92hIjQLFmJJRosT7tk9bJwtVzWK0uTLmV9zouT1HQ5nGR0XglCykDZfE9IC3-v8P03MkehDG5Hu8kB0gueqWjwzW6lY9g-fjllwJKhbS3gUhToRVyHsujw34JVS86i9R3MyVD90ECeJgHvc8jq0YIYYrjyW3DzknbVLbVd5bZBgoxSmzOwJuP1ZX7ljn6tdM4UZYv1RDUK8z-97IAcgu_XiOpmrk-V8kVT-STw78tnOP3MlKXEBRaQ33lCffVAlMgho3kEIv86_k=w726-h967-no"
         alt="Łukasz Rasiński"
       />

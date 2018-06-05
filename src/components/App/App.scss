@@ -13,6 +13,7 @@ main {
   background: $secondaryBackground $backgroundGrain;
   background-clip: padding-box;
   padding: 5%;
+  padding-bottom: 0%;
   width: 85%;
   h1 {
     color: $secondaryTextColor;

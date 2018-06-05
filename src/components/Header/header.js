@@ -20,19 +20,16 @@ const Nav = () => (
   <nav>
     <ul>
       <li>
-        <Link activeClassName="active" to="/">
-          About
-        </Link>
+        <Link to="/">About</Link>
       </li>
       <li>
-        <Link activeClassName="active" to="/portfolio">
-          Portfolio
-        </Link>
+        <Link to="/techstack">Tech Stack</Link>
       </li>
       <li>
-        <Link activeClassName="active" to="/contact">
-          Contact
-        </Link>
+        <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link to="/contact">Contact</Link>
       </li>
     </ul>
   </nav>
@@ -41,10 +38,10 @@ const Nav = () => (
 const Social = () => (
   <div className="social">
     <a href="https://github.com/ThorTila">
-      <i class="fa fa-github-square" aria-hidden="true" />
+      <i className="fa fa-github-square" aria-hidden="true" />
     </a>
     <a href="https://www.linkedin.com/in/%C5%82ukasz-rasi%C5%84ski/">
-      <i class="fa fa-linkedin-square" aria-hidden="true" />
+      <i className="fa fa-linkedin-square" aria-hidden="true" />
     </a>
   </div>
 );
