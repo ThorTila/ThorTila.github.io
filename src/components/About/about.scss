@@ -1,0 +1,19 @@
+@import '../../_sass/_mixins';
+@import '../../_sass/_variables';
+
+.about {
+  .text {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 5%;
+    margin: 5%;
+    img {
+      float: left;
+      max-width: 10%;
+      border-radius: 50px;
+      @include margin(0, 3%, 3%, 3%);
+    }
+    p {
+    }
+  }
+}

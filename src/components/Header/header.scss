@@ -67,7 +67,7 @@ header {
         }
         &:hover {
           transition: all 1s;
-          background: $btnBackground;
+          background: $btnBackground $backgroundDenim;
           a {
             color: $secondaryTextColor;
             border: 1px dashed $primaryBackground;
